@@ -1,0 +1,26 @@
+SOURCE1=Person.C ArrayList.C main.C
+SOURCE2=Stack.C TestStack.C
+#SOURCE3=LL.C TestLL.C  VERY BAD
+SOURCE4=Queue.C TestQueue.C
+SOURCE5=Bitvector64.C TestBitvector64.C
+CFLAG1=-g -Wall -o testOthers
+CFLAG2=-g -Wall -o testStack
+CFLAG3=-g -Wall -o testLL
+CFLAG4=-g -Wall -o testQueue
+CFLAG5=-g -Wall -o testBitvector
+all: $(SOURCE1) $(SOURCE2) $(SOURCE3) $(SOURCE4) $(SOURCE5)
+	g++ $(CFLAG1) $(SOURCE1)
+	g++ $(CFLAG2) $(SOURCE2)
+	#g++ $(CFLAG3) $(SOURCE3)
+	g++ $(CFLAG4) $(SOURCE4)
+	g++ $(CFLAG5) $(SOURCE5)
+other: $(SOURCE1)
+	g++ $(CFLAG1) $(SOURCE1)
+stack: $(SOURCE2)
+	g++ $(CFLAG2) $(SOURCE2)
+ll: $(SOURCE3)
+	#g++ $(CFLAG3) $(SOURCE3)
+queue: $(SOURCE4)
+	g++ $(CFLAG4) $(SOURCE4)
+bitvector: $(SOURCE5)
+	g++ $(CFLAG5) $(SOURCE5)

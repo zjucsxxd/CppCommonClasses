@@ -1,0 +1,2 @@
+Week before June 2013 - LL.C and LinkedList.C hopelessly broken.
+06/03/2013 -  Bitvector class has segmentation fault caused by operator[] implementation

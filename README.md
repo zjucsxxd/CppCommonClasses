@@ -22,7 +22,7 @@ Queue               (Basic Queue)                           INCOMPLETE
 
     TREE ADS:
     
-BST                 (AVL Binary Search Tree)                INCOMPLETE 
+BST                 (AVL Binary Search Tree)                ********MEMLEAKS*********
 HeapTree            (Basic HeapTree)                        NOT STARTED!!
 PriorityQueue       (Derived from HeapTree)                 NOT STARTED!!
 

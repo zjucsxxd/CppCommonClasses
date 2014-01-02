@@ -1,0 +1,5 @@
+#ifndef BINARY_SEARCH_TREE_C
+#define BINARY_SEARCH_TREE_C
+
+
+#endif //BINARY_SEARCH_TREE_C
