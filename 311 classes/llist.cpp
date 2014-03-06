@@ -87,8 +87,9 @@ void llist::addRear( el_t NewNum )
       Rear = Rear->Next;
       Rear->Elem = NewNum;
       Rear->Next = NULL;
-      ++Count;
     }
+    
+    ++Count;
 }
 
 // Purpose: Deletes the first element in the list
@@ -157,7 +158,7 @@ void llist::deleteIth( int I, el_t & OldNum )
 {
   if(  I<1  ||  I>Count ) // If out of bouds, throw OutOfRange exception
     throw OutOfRange(); // ..will also be thrown if list is empty
-  else if( I == 1 ) // If deleting front, let deleteFront handle it
+  else if( 1 == I ) // If deleting front, let deleteFront handle it
     deleteFront( OldNum ); // ..this also handles deletion of the final element
   else if( I == Count ) // If deleting rear, let deleteRear handle it
     deleteRear( OldNum );
