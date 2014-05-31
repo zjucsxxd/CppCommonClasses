@@ -1,5 +1,5 @@
-bluCommonClasses
-================
+CppCommonClasses
+==================
 
 I need to author my own Data Structures for Uni.  Here they are as a work in progress; incomplete and imperfect.
 
