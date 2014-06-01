@@ -49,5 +49,5 @@ I need to author my own Data Structures for Uni.  Here they are as a work in pro
 
 Queue
   - Exits program if programmer attempts to remove an element from existing queue.  Currently, 
-    careful use of isEmpty() must be used.  I really don't like how easy it is to misuse this
+    careful use of isEmpty() is required..  I really don't like how easy it is to misuse this
     ADS.
