@@ -34,7 +34,6 @@ template<class T>
 {
 public:
 
-
   Queue( ) : front(NULL), back(NULL) //Initializes the object to an empty queue.
   {
     //Intentionally Empty
@@ -142,8 +141,8 @@ public:
   {
     if (isEmpty( ))
       {
-        cout << "Error:Removing an item from an empty queue.\n";
-        exit(1);
+	cerr << "Cannot remove element from empty queue => Exit program :(\n";
+	exit(1);
       }
 
     T result = front->getData( );

@@ -9,6 +9,7 @@ I need to author my own Data Structures for Uni.  Here they are as a work in pro
 
 **They will only be unmarked as INCOMPLETE when they are a TEMPLATE or are COMPLETE.
 
+
     MISC ADS:
     
 	ArrayList           (like C++ vector, Java ArrayList)       NOT A PRIORITY
@@ -20,7 +21,7 @@ I need to author my own Data Structures for Uni.  Here they are as a work in pro
 	DLL                 (Doubly Linked List)                    INCOMPLETE
 	LL                  (Singly Linked List)                    TEMPLATE
 	Stack               (Basic Stack)                           INCOMPLETE
-	Queue               (Basic Queue)                           INCOMPLETE
+	Queue               (Basic Queue)                           TEMPLATE*
 
     TREE ADS:
 	
@@ -40,3 +41,13 @@ I need to author my own Data Structures for Uni.  Here they are as a work in pro
 	**POSSIBLE ADDITIONS:
 	
 	Mnary Trees (B Trees?)
+
+
+
+*Known Issues:
+-------------
+
+Queue
+  - Exits program if programmer attempts to remove an element from existing queue.  Currently, 
+    careful use of isEmpty() must be used.  I really don't like how easy it is to misuse this
+    ADS.
