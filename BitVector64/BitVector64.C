@@ -6,14 +6,14 @@
 using namespace std;
 
 
-class Bitvector64
+class BitVector64
 {
 protected:
   unsigned long int * array;
   int arraySize;
 public:
 
-  Bitvector64( int newSize ) //must specify how many BITS are needed
+  BitVector64( int newSize ) //must specify how many BITS are needed
   {
     array = NULL;
     arraySize = 0;
@@ -50,10 +50,10 @@ public:
     array = newVector;
   }
 
-  bool operator[]( int index ) //return the particular bit's value
+  bool operator[](unsigned int index) //return the particular bit's value
   {
-    int cell = index / 32; //find which cell the bit can be found in
-    int bit = index % 32; //find which bit in the cell is the needed one
+    unsigned int cell = index / 32; //find which cell the bit can be found in
+    unsigned int bit = index % 32; //find which bit in the cell is the needed one
     return(array[cell] & (1 << bit)) >> bit; //SEGFAULT HERE
     //take 1, left shift it up bit spaces, AND it with the current array to isolate the
     //bit, and right shift down the necessary bits to get either 0 or 1
@@ -71,38 +71,16 @@ public:
 
   void clearAll()
   {
-    for( int index = 0; index < arraySize; index++ )
+    for( unsigned int index = 0; index < arraySize; index++ )
       array[index] = 0; //set all "cells" to zero
   }
 
   void setAll()
   {
-   for ( int index = 0; index < arraySize; index++ )
+   for ( unsigned int index = 0; index < arraySize; index++ )
      array[index] = 0xFFFFFFFFFFFFFFFF; //set all "cells" to maximum capacity
   }
 
-  int notes()
-  {
-    cout << "BitVectors\n";
-    cout << "  \"storing particular data in particular bits\"\n";
-
-    cout << "\nPress enter to continue reading notes\n";
-    getchar();
-
-    cout << "\nSince processors can only process 32 (or 64 in my case) bit packets, you can store and manipulate data much faster in bitvectors";
-
-    cout << "\nFor my computer, unsigned long ints are 64-bits long\n";
-    getchar();
-
-    cout << "\nThis implementation is an array of 64-bit bitvectors.  You need more than 64 bits, look in the next array cell\n";
-    getchar();
-
-    cout << "\nRetrieving an individual bit:\n";
-    cout << "1. Find the correct index; divide index by 64.If you want bits 0-63, look in cell one.";
-    cout << "\n     If  you want bits 64-126, look in the second.  Pattern continues\n";
-    cout << "2.Retrive the bit;\n";
-    return 0;
-  }
 
 };
 

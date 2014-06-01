@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/testbv.dir/testbv.C.o  -o testbv -rdynamic -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread 

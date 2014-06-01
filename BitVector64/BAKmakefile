@@ -1,0 +1,23 @@
+#Author: Jeff Bunce
+#File type: Linux makefile
+#Purpose: Simplify the compilation process
+
+#Options
+CC=g++
+DEBUG=-g
+CFLAGS=-Wall
+EXE=testbv
+FILES=$(EXE).C BitVector64.C
+FLAGS=-o $(EXE)
+
+
+debug : $(FILES)
+	echo;echo;
+	$(CC) $(DEBUG) $(FILES) $(FLAGS)
+
+release : $(FILES)
+	echo;echo;
+	$(CC) $(CFLAGS) $(FILES) $(FLAGS)
+
+clean :
+	rm $(EXE); rm a.out; rm *~; rm core.*; rm *.gch; echo; echo; ls; echo;

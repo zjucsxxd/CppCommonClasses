@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeff/src/CppCommonClasses/BitVector64/BitVector64.C
+iostream
+-
+stdio.h
+-
+
+/home/jeff/src/CppCommonClasses/BitVector64/testbv.C
+iostream
+-
+BitVector64.C
+/home/jeff/src/CppCommonClasses/BitVector64/BitVector64.C
+gtest/gtest.h
+-
+
