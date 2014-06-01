@@ -1,8 +1,10 @@
-/*
-This is a TEMPLATE Queue class using a linked list style implementation
-*Interface and Implementation in SAME file for MSVC compatibility*
-  By Jeff Bunce
-  05/22/2013
+/**
+   \class Queue  
+ 
+   A simple queue with a simple interface.
+
+   \author Originally based on code from "Data Structures for Game Programmers"
+   \author Adapted by Jeff Bunce
 */
 
 #ifndef QUEUE_C
@@ -11,6 +13,7 @@ This is a TEMPLATE Queue class using a linked list style implementation
 #include <cstdlib>
 #include <cstddef>
 using namespace std;
+
 
 
 template<class T>
@@ -30,23 +33,34 @@ private:
 
 
 template<class T>
-    class Queue
+class Queue
 {
 public:
 
-  Queue( ) : front(NULL), back(NULL) //Initializes the object to an empty queue.
+  /**
+     Default Constructor
+
+     Initializes the object to an empty queue.
+  */
+  Queue( ) : front(NULL), back(NULL)
   {
     //Intentionally Empty
   }
 
-  Queue(const Queue<T>& aQueue)//Copy Constructor
+  /**
+     Copy Constructor
+
+     Initializes the object to be an exact copy of an existing queue.
+     @param existingQueue const Queue<T>&
+  */
+  Queue(const Queue<T>& existingQueue)
   {
     //uses cstddef
-    if (aQueue.isEmpty( ))
+    if (existingQueue.isEmpty( ))
       front = back = NULL;
     else
       {
-        Node<T> *temp = aQueue.front;//temp moves
+        Node<T> *temp = existingQueue.front;//temp moves
         //through the nodes from front to back of aQueue.
 
         back = new Node<T>(temp->getData( ), NULL);
@@ -67,7 +81,12 @@ public:
       }
   }  
 
-    Queue<T>& operator =(const Queue<T>& rightSide) //overloading =
+  /**
+     Overloading = operator
+
+     @param rightSide const Queue<T>&
+  */
+  Queue<T>& operator =(const Queue<T>& rightSide)
   {
     if (front == rightSide.front)//if the queues are the same
       return *this;
@@ -111,7 +130,11 @@ public:
   }
 
 
-    virtual ~Queue( ) //Destructor
+  /**
+     A (virtual) Destructor
+     
+  */
+  virtual ~Queue( ) //Destructor
   {
     //T next;
     while (! isEmpty( ))
@@ -133,11 +156,16 @@ public:
       }
   }
   
+  /** 
+      Remove the element at the front of the queue.
 
+      @return returns the removed element.
+      \warning ALWAYS test that an element exists before calling remove()
+      \pre An element must exist
+      \post The removed element will no longer exist in the queue
+      @see isEmtpy()
+  */
   T remove( )
-  //Precondition: The queue is not empty.
-  //Returns the item at the front of the queue
-  //and removes that item from the queue.
   {
     if (isEmpty( ))
       {
@@ -158,17 +186,20 @@ public:
     return result;
   }
 
-
+  /**
+     Check that the queue is (or isn't empty)
+     
+     @return returns true if the queue is empty
+  */
   bool isEmpty( ) const
   //Returns true if the queue is empty. Returns false otherwise.
   {
     return (back == NULL);
   }
+
 private:
-  Node<T> *front;//Points to the head of a linked list. 
-  //Items are removed at the head
-  Node<T> *back;//Points to the node at the other end of the linked list.
-  //Items are added at this end.
+  Node<T> *front;/**< Points to the head of a linked list. */
+  Node<T> *back;/**<Points to the node at the other end of the linked list. */
 };
 
 #endif //STACK_C
