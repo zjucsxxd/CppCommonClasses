@@ -7,9 +7,9 @@ I need to author my own Data Structures for Uni.  Here they are as a work in pro
 	**Tree ADS will be derived from a common Tree class, excluding multiway trees
 		**Dgraph method MST (Minimum Spanning Tree) will return a Tree object
 
-**They will only be unmarked as INCOMPLETE when they are a TEMPLATE or are COMPLETE.
 
-
+        THE ADS             SHORT DESCRIPTION                       CURRENT STATUS
+    
     MISC ADS:
     
 	ArrayList           (like C++ vector, Java ArrayList)       NOT A PRIORITY
@@ -45,9 +45,8 @@ I need to author my own Data Structures for Uni.  Here they are as a work in pro
 
 
 *Known Issues:
--------------
 
 Queue
   - Exits program if programmer attempts to remove an element from existing queue.  Currently, 
-    careful use of isEmpty() is required..  I really don't like how easy it is to misuse this
-    ADS.
+    careful use of isEmpty() is required..  I don't like how easy it is to misuse this
+    ADS but I really like how avoiding pointers leaves little room for obscure mistakes.

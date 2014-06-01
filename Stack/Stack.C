@@ -127,7 +127,7 @@ public:
   {
     if (isEmpty( ))
       {
-	cout << "Error: popping from an empty stack.\n";
+	cout << "Error: popping from an empty stack => Exting program\n";
 	exit(1);
       }
     T result = top->getData( );

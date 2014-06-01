@@ -141,7 +141,7 @@ public:
   {
     if (isEmpty( ))
       {
-	cerr << "Cannot remove element from empty queue => Exit program :(\n";
+	cerr << "Error: Removing from empty queue => Exiting program\n";
 	exit(1);
       }
 
